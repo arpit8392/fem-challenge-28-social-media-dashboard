@@ -1,0 +1,93 @@
+export const followersData: Follower[] = [
+	{
+		id: 1,
+		website: 'Facebook',
+		handle: '@nathanf',
+		metric: 'Followers',
+		count: '1987',
+		summary: '+12 Today',
+	},
+	{
+		id: 2,
+		website: 'Twitter',
+		handle: '@nathanf',
+		metric: 'Followers',
+		count: '1044',
+		summary: '+99 Today',
+	},
+	{
+		id: 3,
+		website: 'Instagram',
+		handle: '@realnathanf',
+		metric: 'Followers',
+		count: '11K',
+		summary: '+1099 Today',
+	},
+	{
+		id: 4,
+		website: 'Youtube',
+		handle: 'NathanF',
+		metric: 'Subscribers',
+		count: '8239',
+		summary: '-144 Today',
+	},
+]
+
+export const overviewData: Overview[] = [
+	{
+		id: 1,
+		website: 'Facebook',
+		metric: 'Page Views',
+		count: '87',
+		summary: '+3%',
+	},
+	{
+		id: 2,
+		website: 'Facebook',
+		metric: 'Likes',
+		count: '52',
+		summary: '-2%',
+	},
+	{
+		id: 3,
+		website: 'Instagram',
+		metric: 'Likes',
+		count: '5462',
+		summary: '+2257%',
+	},
+	{
+		id: 4,
+		website: 'Instagram',
+		metric: 'Profile Views',
+		count: '52K',
+		summary: '+1375%',
+	},
+	{
+		id: 5,
+		website: 'Twitter',
+		metric: 'Retweets',
+		count: '117',
+		summary: '+303%',
+	},
+	{
+		id: 6,
+		website: 'Twitter',
+		metric: 'Likes',
+		count: '507',
+		summary: '+553%',
+	},
+	{
+		id: 7,
+		website: 'Youtube',
+		metric: 'Likes',
+		count: '107',
+		summary: '-19%',
+	},
+	{
+		id: 8,
+		website: 'Youtube',
+		metric: 'Total Views',
+		count: '1407',
+		summary: '-12%',
+	},
+]
