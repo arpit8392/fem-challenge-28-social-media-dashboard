@@ -15,7 +15,7 @@ export default function ThemeSwitcher() {
 
 	if (!mounted) return null
 
-	const currentTheme = theme === 'systemTheme' ? systemTheme : theme
+	const currentTheme = theme === 'system' ? systemTheme : theme
 
 	const handleToggle = () => {
 		if (currentTheme === 'dark') {
@@ -27,7 +27,7 @@ export default function ThemeSwitcher() {
 
 	const switchClassName = clsx(
 		currentTheme === 'dark' ||
-			(currentTheme === 'systemTheme' &&
+			(currentTheme === 'system' &&
 				window.matchMedia('(prefers-color-scheme: dark)').matches)
 			? 'bg-toggleDarkGradient'
 			: 'bg-toggle hover:bg-toggleDarkGradient',
@@ -36,7 +36,7 @@ export default function ThemeSwitcher() {
 
 	const knobClassName = clsx(
 		currentTheme === 'dark' ||
-			(currentTheme === 'systemTheme' &&
+			(currentTheme === 'system' &&
 				window.matchMedia('(prefers-color-scheme: dark)').matches)
 			? 'translate-x-0'
 			: 'translate-x-5',
@@ -55,7 +55,7 @@ export default function ThemeSwitcher() {
 			<Switch
 				checked={
 					currentTheme === 'dark' ||
-					(currentTheme === 'systemTheme' &&
+					(currentTheme === 'system' &&
 						window.matchMedia('(prefers-color-scheme: dark)').matches)
 				}
 				onChange={handleToggle}
