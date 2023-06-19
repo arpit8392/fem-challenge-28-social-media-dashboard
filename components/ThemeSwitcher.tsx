@@ -17,6 +17,32 @@ export default function ThemeSwitcher() {
 
 	const currentTheme = theme === 'systemTheme' ? systemTheme : theme
 
+	const handleToggle = () => {
+		if (currentTheme === 'dark') {
+			setTheme('light')
+		} else {
+			setTheme('dark')
+		}
+	}
+
+	const switchClassName = clsx(
+		currentTheme === 'dark' ||
+			(currentTheme === 'systemTheme' &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches)
+			? 'bg-toggleDarkGradient'
+			: 'bg-toggle hover:bg-toggleDarkGradient',
+		'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-500 ease-in-out focus:outline-none'
+	)
+
+	const knobClassName = clsx(
+		currentTheme === 'dark' ||
+			(currentTheme === 'systemTheme' &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches)
+			? 'translate-x-0'
+			: 'translate-x-5',
+		'pointer-events-none inline-block h-5 w-5 transform rounded-full bg-lightCardBG shadow ring-0 transition duration-500 ease-in-out'
+	)
+
 	return (
 		<Switch.Group
 			as='div'
@@ -32,29 +58,10 @@ export default function ThemeSwitcher() {
 					(currentTheme === 'systemTheme' &&
 						window.matchMedia('(prefers-color-scheme: dark)').matches)
 				}
-				onChange={() =>
-					currentTheme === 'dark' ? setTheme('light') : setTheme('dark')
-				}
-				className={clsx(
-					currentTheme === 'dark' ||
-						(currentTheme === 'systemTheme' &&
-							window.matchMedia('(prefers-color-scheme: dark)').matches)
-						? 'bg-toggleDarkGradient'
-						: 'bg-toggle hover:bg-toggleDarkGradient',
-					'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-500 ease-in-out focus:outline-none'
-				)}>
+				onChange={handleToggle}
+				className={switchClassName}>
 				<span className='sr-only'>Enable Dark Mode</span>
-				<span
-					aria-hidden='true'
-					className={clsx(
-						currentTheme === 'dark' ||
-							(currentTheme === 'systemTheme' &&
-								window.matchMedia('(prefers-color-scheme: dark)').matches)
-							? 'translate-x-0'
-							: 'translate-x-5',
-						'pointer-events-none inline-block h-5 w-5 transform rounded-full bg-lightCardBG shadow ring-0 transition duration-500 ease-in-out'
-					)}
-				/>
+				<span aria-hidden='true' className={knobClassName} />
 			</Switch>
 		</Switch.Group>
 	)
