@@ -22,17 +22,23 @@ export default function ThemeSwitcher() {
 			as='div'
 			className='group flex items-center justify-between md:justify-normal'>
 			<Switch.Label as='span' className='mr-3'>
-				<span className='text-sm font-bold text-lightText dark:text-darkText group-hover:dark:text-white group-hover:cursor-pointer'>
+				<span className='text-sm font-bold text-lightText group-hover:cursor-pointer dark:text-darkText group-hover:dark:text-white'>
 					Dark Mode
 				</span>
 			</Switch.Label>
 			<Switch
-				checked={currentTheme === 'dark'}
+				checked={
+					currentTheme === 'dark' ||
+					(currentTheme === 'systemTheme' &&
+						window.matchMedia('(prefers-color-scheme: dark)').matches)
+				}
 				onChange={() =>
 					currentTheme === 'dark' ? setTheme('light') : setTheme('dark')
 				}
 				className={clsx(
-					currentTheme === 'dark'
+					currentTheme === 'dark' ||
+						(currentTheme === 'systemTheme' &&
+							window.matchMedia('(prefers-color-scheme: dark)').matches)
 						? 'bg-toggleDarkGradient'
 						: 'bg-toggle hover:bg-toggleDarkGradient',
 					'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-500 ease-in-out focus:outline-none'
@@ -41,7 +47,11 @@ export default function ThemeSwitcher() {
 				<span
 					aria-hidden='true'
 					className={clsx(
-						currentTheme === 'dark' ? 'translate-x-0' : 'translate-x-5',
+						currentTheme === 'dark' ||
+							(currentTheme === 'systemTheme' &&
+								window.matchMedia('(prefers-color-scheme: dark)').matches)
+							? 'translate-x-0'
+							: 'translate-x-5',
 						'pointer-events-none inline-block h-5 w-5 transform rounded-full bg-lightCardBG shadow ring-0 transition duration-500 ease-in-out'
 					)}
 				/>

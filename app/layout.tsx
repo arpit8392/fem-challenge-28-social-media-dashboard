@@ -18,7 +18,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body
-				className={`${inter.className} scroll-smooth bg-white transition-all duration-700 dark:bg-darkBlueBG`}>
+				className={`${inter.className} scroll-smooth bg-white transition-all duration-500 dark:bg-darkBlueBG`}>
 				<ThemeProvider enableSystem={true} attribute='class'>
 					<div>{children}</div>
 				</ThemeProvider>
