@@ -6,7 +6,7 @@ const Header = () => {
 			{/* Top Background */}
 			<div className='absolute left-0 top-0 -z-20 h-64 w-full rounded-b-3xl bg-lightBlueTopBG dark:bg-darkBlueTopBG' />
 			{/* Header Section  */}
-			<div className='flex flex-col gap-6 divide-y divide-[#848BAB] px-6 py-9 dark:divide-[#333A55] md:flex-row md:items-center md:justify-between md:divide-y-0 md:px-40'>
+			<div className='flex flex-col gap-6 divide-y divide-hoverLightCard px-6 py-9 dark:divide-hoverDarkCard md:flex-row md:items-center md:justify-between md:divide-y-0 md:px-40'>
 				{/* Heading & Followers */}
 				<div className='flex flex-col gap-1'>
 					<h1 className='text-2xl font-bold text-lightTextDark dark:text-white md:text-3xl'>

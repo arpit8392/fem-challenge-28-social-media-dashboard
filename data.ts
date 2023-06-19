@@ -26,7 +26,7 @@ export const followersData: Follower[] = [
 	{
 		id: 4,
 		website: 'Youtube',
-		handle: 'NathanF',
+		handle: 'Nathan F.',
 		metric: 'Subscribers',
 		count: '8239',
 		summary: '-144 Today',

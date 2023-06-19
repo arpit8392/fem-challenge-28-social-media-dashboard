@@ -21,6 +21,8 @@ module.exports = {
 				lightCardBG: 'hsl(227, 47%, 96%)',
 				lightText: 'hsl(230, 12%, 44%)',
 				lightTextDark: 'hsl(230, 17%, 14%)',
+				hoverLightCard: 'hsl(228, 33%, 91%)',
+				hoverDarkCard: 'hsl(228, 25%, 27%)'
 			},
 			backgroundImage: {
 				toggleDarkGradient:
